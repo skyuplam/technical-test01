@@ -1,0 +1,27 @@
+{
+  "name": "technical-test01",
+  "version": "0.1.0",
+  "description": "A demo to solve the technical questions being asked. See *CodeTest-Shareactor.io.pdf* file for the detail.",
+  "author": "Terrence Lam <skyuplam@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "react-scripts": "0.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:skyuplam/technical-test01.git"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "dependencies": {
+    "react": "^15.4.0",
+    "react-dom": "^15.4.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
