@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import './App.css';
 
-function App(props) {
+export function App(props) {
   return (
     <div className="App">
       <Helmet
