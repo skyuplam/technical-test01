@@ -21,25 +21,29 @@ export default function createRoutes(store) {
       path: '/',
       name: 'home',
       getComponent(nextState, cb) {
-        const importModules = Promise.all([
-          require('./containers/HomePage'),
-        ]);
+        require.ensure([], (require) => {
+          const importModules = Promise.all([
+            require('./containers/HomePage'),
+          ]);
 
-        const renderRoute = loadModule(cb);
+          const renderRoute = loadModule(cb);
 
-        importModules.then(([component]) => {
-          renderRoute(component);
+          importModules.then(([component]) => {
+            renderRoute(component);
+          });
+
+          importModules.catch(errorLoading);
         });
-
-        importModules.catch(errorLoading);
       },
     }, {
       path: '*',
       name: 'notfound',
       getComponent(nextState, cb) {
-        require('./containers/NotFoundPage')
-          .then(loadModule(cb))
-          .catch(errorLoading);
+        require.ensure([], (require) => {
+          require('./containers/NotFoundPage')
+            .then(loadModule(cb))
+            .catch(errorLoading);
+        });
       },
     },
   ];
