@@ -47,9 +47,13 @@ export default function configureStore(initialState = {}, history) {
   if (module.hot) {
     module.hot.accept('./reducers', () => {
       require.ensure([], (require) => {
-        const createReducers = require('./reducers').default;
-        const nextReducers = createReducers(store.asyncReducers);
-        store.replaceReducer(nextReducers);
+        Promise.all([require('./reducers')])
+          .then(([reducerModule]) => {
+            const createReducers = reducerModule.default;
+            const nextReducers = createReducers(store.asyncReducers);
+
+            store.replaceReducer(nextReducers);
+          })
       });
     });
   }

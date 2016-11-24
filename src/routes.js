@@ -40,7 +40,7 @@ export default function createRoutes(store) {
       name: 'notfound',
       getComponent(nextState, cb) {
         require.ensure([], (require) => {
-          require('./containers/NotFoundPage')
+          Promise.all([require('./containers/NotFoundPage')])
             .then(loadModule(cb))
             .catch(errorLoading);
         });
