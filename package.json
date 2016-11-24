@@ -5,6 +5,7 @@
   "author": "Terrence Lam <skyuplam@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "coveralls": "^2.11.15",
     "enzyme": "^2.6.0",
     "react-addons-test-utils": "^15.4.1",
     "react-scripts": "0.7.0"

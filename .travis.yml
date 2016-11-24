@@ -5,7 +5,7 @@ node_js:
   - 5
   - 4
 
-script: npm run build
+script: npm test
 
 install:
   - npm i -g npm@latest
