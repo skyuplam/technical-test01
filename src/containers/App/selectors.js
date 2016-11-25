@@ -1,6 +1,8 @@
 /**
  * The global state selectors
  */
+import { createSelector } from 'reselect';
+
 
 const selectGlobal = () => (state) => state.get('global');
 
@@ -20,7 +22,19 @@ const selectLocationState = () => {
   };
 };
 
+const selectGists = () => createSelector(
+  selectGlobal(),
+  (globalState) => globalState.getIn(['userData', 'gists'])
+);
+
+const selectRepos = () => createSelector(
+  selectGlobal(),
+  (globalState) => globalState.getIn(['userData', 'repos'])
+);
+
 export {
   selectGlobal,
   selectLocationState,
+  selectGists,
+  selectRepos,
 };

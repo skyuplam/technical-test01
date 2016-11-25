@@ -10,7 +10,7 @@ describe('<HomePage />', () => {
       <HomePage />
     );
     expect(renderedComponent.contains(
-      <p>Hello, world!</p>
+      <p>Input username from Github.com to fetch the user's gists.</p>
     )).toEqual(true);
   });
 });
