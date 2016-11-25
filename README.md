@@ -7,6 +7,113 @@ The answer can be found in the file [highestProductOfThreeInt.js](src/utils/high
 
 The Tests can be found in the [__tests__/highestProductOfThreeInt.js](src/utils/__tests__/highestProductOfThreeInt.js).
 
+### Run test
+
+Run the following command in your terminal
+
+```bash
+npm test
+```
+Press `q` and enter *highest* to run the Q1 tests
+
 ## Question 2B
 
 The demo site can be accessed [here](https://skyuplam.github.io/technical-test01/#/).
+
+### Build
+
+Run the following command in your terminal
+
+```bash
+npm run build
+```
+
+## Development
+
+Clone the Project
+
+```bash
+git clone git@github.com:skyuplam/technical-test01.git
+```
+
+Go to the Project
+
+```bash
+cd technical-test01/
+```
+
+Install npm packages using [yarn](https://yarnpkg.com/)
+
+```bash
+yarn install
+```
+
+Run the project
+
+```bash
+npm start
+```
+
+## Project Structure
+
+src/
+├── containers  // Container for the main page
+│   ├── App  // App container
+│   │   ├── App.css
+│   │   ├── __tests__  // Test cases folder containing all tests
+│   │   │   ├── actions.js
+│   │   │   ├── index.js
+│   │   │   ├── reducer.js
+│   │   │   └── selectors.js
+│   │   ├── actions.js
+│   │   ├── constants.js
+│   │   ├── index.js
+│   │   ├── logo.svg
+│   │   ├── reducer.js
+│   │   └── selectors.js
+│   ├── HomePage  // Home Page container
+│   │   ├── __tests__  // Test cases folder containing all tests
+│   │   │   ├── actions.js
+│   │   │   ├── index.js
+│   │   │   ├── reducer.js
+│   │   │   └── selectors.js
+│   │   ├── actions.js
+│   │   ├── constants.js
+│   │   ├── index.js
+│   │   ├── reducer.js
+│   │   ├── sagas.js
+│   │   └── selectors.js
+│   └── NotFoundPage  // Not found page container
+│       ├── __tests__
+│       │   └── index.js
+│       └── index.js
+├── index.css
+├── index.js
+├── reducers.js
+├── routes.js
+├── store.js
+└── utils
+    ├── __tests__
+    │   ├── asyncInjectors.js
+    │   ├── highestProductOfThreeInt.js  // Question 1 test cases
+    │   └── request.js
+    ├── asyncInjectors.js
+    ├── highestProductOfThreeInt.js  // Question 1 answer
+    └── request.js
+
+
+## Dependencies
+
++ [React](https://github.com/facebook/react)
++ [Redux](https://github.com/reactjs/redux)
++ [immutable](https://facebook.github.io/immutable-js/)
++ [redux-saga](https://github.com/yelouafi/redux-saga)
++ [reselect](https://github.com/reactjs/reselect)
++ [material-ui](https://github.com/callemall/material-ui)
++ [lodash](https://github.com/lodash/lodash)
++ others
+
+
+# License
+
+This project is licensed under the MIT license, Copyright (c) 2016 Terrence Lam. For more information see `LICENSE.md`.
