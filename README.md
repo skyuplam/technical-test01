@@ -9,12 +9,17 @@ The Tests can be found in the [__tests__/highestProductOfThreeInt.js](src/utils/
 
 ### Run test
 
-Run the following command in your terminal
+1. clone the project with `git clone git@github.com:skyuplam/technical-test01.git`
+
+2. go to the project folder `cd technical-test01`
+
+3. run the following command to start [jest](https://facebook.github.io/jest/) tester
 
 ```bash
 npm test
 ```
-Press `q` and enter *highest* to run the Q1 tests
+
+Press `q` and then input *highest* to run only the Q1 tests. Press `a` to run all tests for the whole project.
 
 ## Question 2B
 
