@@ -10,6 +10,8 @@ import {
   LOAD_REPOS,
   LOAD_REPOS_SUCCESS,
   LOAD_REPOS_ERROR,
+  SORTING,
+  FILTERING,
 } from './constants';
 
 
@@ -94,4 +96,32 @@ export function reposLoadingError(error) {
     type: LOAD_REPOS_ERROR,
     error,
   };
+}
+
+/**
+ * Dispatched when loading the repos fails
+ *
+ * @param  {object} criterion The criterion
+ *
+ * @return {object} An action object with a type of SORTING passing the error
+ */
+export function sort(criterion) {
+ return {
+   type: SORTING,
+   criterion,
+ }
+}
+
+/**
+ * Dispatched when loading the repos fails
+ *
+ * @param  {object} criterion The criterion
+ *
+ * @return {object} An action object with a type of FILTERING passing the error
+ */
+export function filter(criterion) {
+  return {
+    type: FILTERING,
+    criterion,
+  }
 }

@@ -5,7 +5,7 @@ import {
 } from './constants';
 
 // The initial state
-const initialState = fromJS({
+export const initialState = fromJS({
   username: '',
 });
 

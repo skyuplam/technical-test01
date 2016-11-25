@@ -8,6 +8,8 @@ import {
   LOAD_REPOS,
   LOAD_REPOS_SUCCESS,
   LOAD_REPOS_ERROR,
+  SORTING,
+  FILTERING,
 } from './constants';
 
 // The initial state of the App
@@ -19,6 +21,8 @@ export const initialState = fromJS({
     gists: false,
     repos: false,
   },
+  sorting: 'id',
+  filtering: null,
 });
 
 function appReducer(state = initialState, action) {
@@ -51,6 +55,12 @@ function appReducer(state = initialState, action) {
       return state
         .set('error', action.error)
         .set('loading', false);
+    case SORTING:
+      return state
+        .set('sorting', action.criterion);
+    case FILTERING:
+      return state
+        .set('filtering', action.criterion);
     default:
       return state;
   }

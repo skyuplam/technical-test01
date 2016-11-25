@@ -2,6 +2,11 @@
  * The global state selectors
  */
 import { createSelector } from 'reselect';
+import { orderBy, filter, has, toLower, get } from 'lodash';
+import {
+  FILTERING_OPTION_ODD_ID,
+  FILTERING_OPTION_EVEN_ID,
+} from './constants';
 
 
 const selectGlobal = () => (state) => state.get('global');
@@ -22,19 +27,41 @@ const selectLocationState = () => {
   };
 };
 
-const selectGists = () => createSelector(
+const selectSorting = () => createSelector(
   selectGlobal(),
-  (globalState) => globalState.getIn(['userData', 'gists'])
+  (homeState) => homeState.get('sorting')
+);
+
+const selectFiltering = () => createSelector(
+  selectGlobal(),
+  (homeState) => homeState.get('filtering')
 );
 
 const selectRepos = () => createSelector(
   selectGlobal(),
-  (globalState) => globalState.getIn(['userData', 'repos'])
+  selectSorting(),
+  selectFiltering(),
+  (globalState, sorting, filtering) => orderBy(filter(
+    globalState.getIn(['userData', 'repos']),
+    (o) => {  // filtering with criterion
+      if (!has(o, 'id')) return true;  // no filter if there is no id property
+
+      switch (filtering) {
+        case FILTERING_OPTION_ODD_ID:
+          return o.id % 2 !== 0
+        case FILTERING_OPTION_EVEN_ID:
+          return o.id % 2 === 0
+        default:
+          return true;
+      }
+    }
+  ), (o) => toLower(get(o, sorting)), ['asc'])  // lower the string and order it by the criterion ascendingly
 );
 
 export {
   selectGlobal,
   selectLocationState,
-  selectGists,
+  selectSorting,
+  selectFiltering,
   selectRepos,
 };
