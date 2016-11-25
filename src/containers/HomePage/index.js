@@ -5,7 +5,7 @@ import { createStructuredSelector } from 'reselect';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import IconButton from 'material-ui/IconButton';
-import { greenA200 } from 'material-ui/styles/colors';
+import { greenA200, green500 } from 'material-ui/styles/colors';
 import LinkIcon from 'material-ui/svg-icons/content/link';
 import {GridList, GridTile} from 'material-ui/GridList';
 import { isEmpty } from 'lodash';
@@ -26,22 +26,8 @@ import {
   FILTERING_OPTION_ODD_ID,
 } from '../App/constants';
 
+import './HomePage.css';
 
-const styles = {
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
-  },
-  gridList: {
-    width: 500,
-    height: 500,
-    overflowY: 'auto',
-  },
-  titleStyle: {
-    color: 'rgb(0, 188, 212)',
-  },
-};
 
 export const introMsg = "Input username from Github.com to fetch the user's repos Or simply click `FETCH REPOS`.";
 
@@ -92,8 +78,8 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
           </div>
         }
         <br />
-        <div style={styles.root}>
-          <GridList style={styles.gridList} cols={2.2}>
+        <div className="Home-Page-Gridlist-root">
+          <GridList className="Home-Page-Gridlist" cols={2.2}>
             {repos ? repos.map((r) => (
               <GridTile
                 key={r.id}
@@ -109,7 +95,9 @@ export class HomePage extends React.PureComponent { // eslint-disable-line react
                     <LinkIcon />
                   </IconButton>
                 }
-                titleStyle={styles.titleStyle}
+                titleStyle={{
+                  color: green500,
+                }}
               >
                 <img alt={r.login} src={r.avatar_url} />
               </GridTile>

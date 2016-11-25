@@ -1,0 +1,11 @@
+.Home-Page-Gridlist-root {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.Home-Page-Gridlist {
+  width: 500px;
+  height: 500px;
+  overflow-y: auto;
+}

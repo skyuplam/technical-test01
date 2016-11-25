@@ -69,7 +69,7 @@ src/
 ├── containers  // Container for the main page
 │   ├── App  // App container
 │   │   ├── App.css
-│   │   ├── __tests__  // Test cases folder containing all tests
+│   │   ├── __tests__  // Test case folder containing all tests
 │   │   │   ├── actions.js
 │   │   │   ├── index.js
 │   │   │   ├── reducer.js
@@ -77,11 +77,11 @@ src/
 │   │   ├── actions.js
 │   │   ├── constants.js
 │   │   ├── index.js
-│   │   ├── logo.svg
 │   │   ├── reducer.js
 │   │   └── selectors.js
 │   ├── HomePage  // Home Page container
-│   │   ├── __tests__  // Test cases folder containing all tests
+│   │   ├── HomePage.css
+│   │   ├── __tests__  // Test case folder containing all tests
 │   │   │   ├── actions.js
 │   │   │   ├── index.js
 │   │   │   ├── reducer.js
@@ -90,17 +90,17 @@ src/
 │   │   ├── constants.js
 │   │   ├── index.js
 │   │   ├── reducer.js
-│   │   ├── sagas.js
+│   │   ├── sagas.js  // handling async jobs
 │   │   └── selectors.js
 │   └── NotFoundPage  // Not found page container
 │       ├── __tests__
 │       │   └── index.js
 │       └── index.js
 ├── index.css
-├── index.js
-├── reducers.js
-├── routes.js
-├── store.js
+├── index.js  // starting point
+├── reducers.js  // combine all reducers in this file
+├── routes.js  // async routes
+├── store.js  // redux store and middlewares
 └── utils
     ├── __tests__
     │   ├── asyncInjectors.js
