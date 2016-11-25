@@ -56,7 +56,7 @@ npm start
 
 ## Deployment
 
-Run the following command in your terminal to deploy
+Run the following command in your terminal to deploy to github page
 
 ```bash
 npm run deploy
