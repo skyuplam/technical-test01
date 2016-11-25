@@ -54,8 +54,17 @@ Run the project
 npm start
 ```
 
+## Deployment
+
+Run the following command in your terminal to deploy
+
+```bash
+npm run deploy
+```
+
 ## Project Structure
 
+```
 src/
 ├── containers  // Container for the main page
 │   ├── App  // App container
@@ -100,6 +109,7 @@ src/
     ├── asyncInjectors.js
     ├── highestProductOfThreeInt.js  // Question 1 answer
     └── request.js
+```
 
 
 ## Dependencies
