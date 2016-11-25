@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { HomePage } from '../index';
+import { HomePage, introMsg } from '../index';
 
 
 describe('<HomePage />', () => {
@@ -10,7 +10,7 @@ describe('<HomePage />', () => {
       <HomePage />
     );
     expect(renderedComponent.contains(
-      <p>Hello, world!</p>
+      <p>{introMsg}</p>
     )).toEqual(true);
   });
 });
