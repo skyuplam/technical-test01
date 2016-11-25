@@ -61,11 +61,26 @@ npm start
 
 ## Deployment
 
+### Deploy to Github page
+
 Run the following command in your terminal to deploy to github page
 
 ```bash
 npm run deploy
 ```
+
+### Deploy to your own server
+
+1. setup a [nginx service with docker](https://hub.docker.com/_/nginx/), simply run `docker pull nginx` to pull the image
+2. build the static files with `npm run build`
+3. copy the static files to the server, or simply use `tar -cf build.tar build && scp build.tar {username}@{server address}:~/`
+4. go to the server and extract the tar file with command `tar -xvf build.tar`
+5. start the nginx docker service
+
+```bash
+docker run --name static-service -v ~/build:/usr/share/nginx/html:ro -p 3000:3000 -d nginx
+```
+6. go to http://localhost:3000 to see the page
 
 ## Project Structure
 
