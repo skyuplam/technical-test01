@@ -71,10 +71,81 @@ describe('selectRepos', () => {
     repos = [];
     const mockedState = fromJS({
       global: {
-        repos,
+        userData: {
+          repos
+        },
         filtering,
       },
     });
     expect(selector(mockedState)).toEqual(repos);
+  });
+
+  it('should select the repos state with odd ID', () => {
+    repos = [{
+      id: 1,
+      name: 'test 1',
+    }, {
+      id: 2,
+      name: 'test 2',
+    }];
+    const mockedState = fromJS({
+      global: {
+        userData: {
+          repos
+        },
+        filtering: FILTERING_OPTION_ODD_ID,
+        sorting: 'id',
+      },
+    });
+    const expected = [{
+      id: 1,
+      name: 'test 1',
+    }];
+    expect(selector(mockedState)).toEqual(expected);
+  });
+
+  it('should select the repos state with even ID', () => {
+    repos = [{
+      id: 1,
+      name: 'test 1',
+    }, {
+      id: 2,
+      name: 'test 2',
+    }];
+    const mockedState = fromJS({
+      global: {
+        userData: {
+          repos
+        },
+        filtering: FILTERING_OPTION_EVEN_ID,
+        sorting: 'id',
+      },
+    });
+    const expected = [{
+      id: 2,
+      name: 'test 2',
+    }];
+    expect(selector(mockedState)).toEqual(expected);
+  });
+
+  it('should select the repos state without filtering', () => {
+    repos = [{
+      id: 1,
+      name: 'test 1',
+    }, {
+      id: 2,
+      name: 'test 2',
+    }];
+    const mockedState = fromJS({
+      global: {
+        userData: {
+          repos
+        },
+        filtering: 'OMG',
+        sorting: 'id',
+      },
+    });
+    const expected = repos;
+    expect(selector(mockedState)).toEqual(expected);
   });
 });

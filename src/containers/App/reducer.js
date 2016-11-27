@@ -19,7 +19,7 @@ export const initialState = fromJS({
   currentUser: false,
   userData: {
     gists: false,
-    repos: false,
+    repos: fromJS([]),
   },
   sorting: 'id',
   filtering: null,

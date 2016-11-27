@@ -41,8 +41,8 @@ const selectRepos = () => createSelector(
   selectGlobal(),
   selectSorting(),
   selectFiltering(),
-  (globalState, sorting, filtering) => orderBy(filter(
-    globalState.getIn(['userData', 'repos']),
+  (globalState, sorting, filtering) =>
+  orderBy(filter(globalState.getIn(['userData', 'repos']).toJS(),
     (o) => {  // filtering with criterion
       if (!has(o, 'id')) return true;  // no filter if there is no id property
 

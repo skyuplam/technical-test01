@@ -21,102 +21,100 @@ import {
 } from '../actions';
 
 
-describe('App Actions', () => {
-  describe('loadGists', () => {
-    it('should return the correct type', () => {
-      const expectedResult = {
-        type: LOAD_GISTS,
-      };
+describe('loadGists', () => {
+  it('should return the correct type', () => {
+    const expectedResult = {
+      type: LOAD_GISTS,
+    };
 
-      expect(loadGists()).toEqual(expectedResult);
-    });
+    expect(loadGists()).toEqual(expectedResult);
   });
+});
 
-  describe('gistsLoaded', () => {
-    it('should return the correct type and the passed gists', () => {
-      const fixture = ['Test'];
-      const username = 'test';
-      const expectedResult = {
-        type: LOAD_GISTS_SUCCESS,
-        gists: fixture,
-        username,
-      };
+describe('gistsLoaded', () => {
+  it('should return the correct type and the passed gists', () => {
+    const fixture = ['Test'];
+    const username = 'test';
+    const expectedResult = {
+      type: LOAD_GISTS_SUCCESS,
+      gists: fixture,
+      username,
+    };
 
-      expect(gistsLoaded(fixture, username)).toEqual(expectedResult);
-    });
+    expect(gistsLoaded(fixture, username)).toEqual(expectedResult);
   });
+});
 
-  describe('gistsLoadingError', () => {
-    it('should return the correct type and the error', () => {
-      const fixture = {
-        msg: 'Something went wrong!',
-      };
-      const expectedResult = {
-        type: LOAD_GISTS_ERROR,
-        error: fixture,
-      };
+describe('gistsLoadingError', () => {
+  it('should return the correct type and the error', () => {
+    const fixture = {
+      msg: 'Something went wrong!',
+    };
+    const expectedResult = {
+      type: LOAD_GISTS_ERROR,
+      error: fixture,
+    };
 
-      expect(gistsLoadingError(fixture)).toEqual(expectedResult);
-    });
+    expect(gistsLoadingError(fixture)).toEqual(expectedResult);
   });
+});
 
-  describe('loadRepos', () => {
-    it('should return the correct type', () => {
-      const expectedResult = {
-        type: LOAD_REPOS,
-      };
+describe('loadRepos', () => {
+  it('should return the correct type', () => {
+    const expectedResult = {
+      type: LOAD_REPOS,
+    };
 
-      expect(loadRepos()).toEqual(expectedResult);
-    });
+    expect(loadRepos()).toEqual(expectedResult);
   });
+});
 
-  describe('reposLoaded', () => {
-    it('should return the correct type, repos, and username', () => {
-      const fixture = [{ test: "test" }];
-      const username = 'test';
-      const expectedResult = {
-        type: LOAD_REPOS_SUCCESS,
-        repos: fixture,
-        username,
-      };
+describe('reposLoaded', () => {
+  it('should return the correct type, repos, and username', () => {
+    const fixture = [{ test: "test" }];
+    const username = 'test';
+    const expectedResult = {
+      type: LOAD_REPOS_SUCCESS,
+      repos: fixture,
+      username,
+    };
 
-      expect(reposLoaded(fixture, username)).toEqual(expectedResult);
-    });
+    expect(reposLoaded(fixture, username)).toEqual(expectedResult);
   });
+});
 
-  describe('reposLoadingError', () => {
-    it('should return the correct type and error', () => {
-      const error = 'error';
-      const expectedResult = {
-        type: LOAD_REPOS_ERROR,
-        error,
-      };
+describe('reposLoadingError', () => {
+  it('should return the correct type and error', () => {
+    const error = 'error';
+    const expectedResult = {
+      type: LOAD_REPOS_ERROR,
+      error,
+    };
 
-      expect(reposLoadingError(error)).toEqual(expectedResult);
-    });
+    expect(reposLoadingError(error)).toEqual(expectedResult);
   });
+});
 
-  describe('sort', () => {
-    it('should return the correct type and criterion', () => {
-      const criterion = 'test';
-      const expectedResult = {
-        type: SORTING,
-        criterion,
-      };
+describe('sort', () => {
+  it('should return the correct type and criterion', () => {
+    const criterion = 'test';
+    const expectedResult = {
+      type: SORTING,
+      criterion,
+    };
 
-      expect(sort(criterion)).toEqual(expectedResult);
-    });
+    expect(sort(criterion)).toEqual(expectedResult);
   });
+});
 
-  describe('filter', () => {
-    it('should return the correct type and criterion', () => {
-      const criterion = 'test';
-      const expectedResult = {
-        type: FILTERING,
-        criterion,
-      };
+describe('filter', () => {
+  it('should return the correct type and criterion', () => {
+    const criterion = 'test';
+    const expectedResult = {
+      type: FILTERING,
+      criterion,
+    };
 
-      expect(filter(criterion)).toEqual(expectedResult);
-    });
+    expect(filter(criterion)).toEqual(expectedResult);
   });
-})
+});
